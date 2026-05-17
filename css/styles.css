@@ -1,0 +1,140 @@
+/* styles.css - Estilos globales del Formativo Formularios */
+
+/* === BODY === */
+body {
+    background-color: #f8f7f9;
+    font-family: Arial, sans-serif;
+    color: #9747d4;
+}
+
+/* === NAVBAR === */
+.navbar-default {
+    background-color: #784d99;
+    border-color: #784d99;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #e9d5ff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #e9d5ff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ffffff;
+    background-color: #9645dd;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    background-color: #935bbe;
+    color: #ffffff;
+}
+
+/* === DROPDOWN === */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #9e68cd;
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    background-color: #925cbf;
+    border-color: #7e579c;
+}
+
+.dropdown-menu > li > a {
+    color: #e9d5ff;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #8853b6;
+    color: #ffffff;
+}
+
+/* === TOGGLE MOBILE === */
+.navbar-default .navbar-toggle {
+    border-color: #7d4dab;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #7e22ce;
+}
+
+/* === TITULOS === */
+h1, h2, h3 {
+    color: #6b21a8;
+}
+
+/* === BOTONES === */
+.btn-primary {
+    background-color: #7e22ce;
+    border-color: #581c87;
+}
+
+.btn-primary:hover {
+    background-color: #6b21a8;
+    border-color: #4c1d95;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #6b21a8;
+    color: #8453ac;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.pies {
+    background-color: #8453ac;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.pies a img {
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.pies a img:hover {
+    opacity: 1;
+}
+
+.pies hr {
+    border-color: #925ec3;
+}
+
+/* === BOTONES P1 y P2 === */
+.btn-p1 {
+    background-color: #105638;
+    border-color: #117449;
+    color: #ffffff;
+}
+
+.btn-p1:hover {
+    background-color: #0e6c3f;
+    color: #ffffff;
+}
+
+.btn-p2 {
+    background-color: #2432f4;
+    border-color: #635bf7;
+    color: #ffffff;
+}
+
+.btn-p2:hover {
+    background-color: #6255f8;
+    color: #ffffff;
+}
