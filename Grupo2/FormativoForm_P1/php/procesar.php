@@ -38,10 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && !empty($_GET)) {
         // Sanitizar cada interés
         $intereses = array_map("htmlspecialchars", $intereses);
 
-        // Acerca de vos
+        // Acerca de Usted
         $acerca_de_vos = isset($_GET["acerca_de_vos"]) ? trim(htmlspecialchars($_GET["acerca_de_vos"])) : "";
         if (empty($acerca_de_vos)) {
-            throw new Exception("El campo Acerca de vos es obligatorio.");
+            throw new Exception("El campo Acerca de Usted es obligatorio.");
         }
 
         // === CREAR OBJETO CON LOS DATOS VALIDADOS ===
