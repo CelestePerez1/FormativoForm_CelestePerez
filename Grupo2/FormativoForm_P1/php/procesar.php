@@ -1,4 +1,4 @@
-<?php
+ <?php
 // procesar.php - Valida y procesa los datos recibidos por GET
 // Incluye la clase para gestionar la información
 require_once("clase.php");

@@ -1,0 +1,124 @@
+<div class="container" style="margin-top: 30px;">
+
+    <!-- Titulo -->
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h2><strong>Registro de Estudiante</strong></h2>
+            <p class="text-muted">Método POST</p>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Ingrese los datos del estudiante</strong></div>
+                <div class="panel-body">
+
+                    <!-- action apunta a procesar.php, method POST -->
+                    <form id="formulario" method="POST" action="php/procesar.php">
+
+                        <!-- Nombre -->
+                        <div class="form-group">
+                            <label>Nombre del estudiante</label>
+                            <input type="text" name="nombre" class="form-control"
+                                   placeholder="Ingrese su nombre completo"
+                                   pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+                                   minlength="3" maxlength="60"
+                                   required>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="form-group">
+                            <label>Correo electrónico</label>
+                            <input type="email" name="correo" class="form-control"
+                                   placeholder="ejemplo@correo.com"
+                                   required>
+                        </div>
+
+                        <!-- Edad -->
+                        <div class="form-group">
+                            <label>Edad</label>
+                            <input type="number" id="edad" name="edad" class="form-control"
+                                   placeholder="Ingrese su edad"
+                                   min="17" max="99"
+                                   pattern="\d+"
+                                   inputmode="numeric"
+                                   onkeydown="return bloquearNoNumerico(event);"
+                                   onpaste="return bloquearPegarNoNumerico(event);"
+                                   required>
+                        </div>
+
+                        <!-- Carrera -->
+                        <div class="form-group">
+                            <label>Carrera</label>
+                            <select id="carrera" name="carrera" class="form-control" required>
+                                <option value="">--- Seleccione una carrera ---</option>
+                                <option value="DS">Desarrollo de Software</option>
+                                <option value="RED">Redes</option>
+                                <option value="CIB">Ciberseguridad</option>
+                            </select>
+                        </div>
+
+                        <!-- Materias - se muestran segun la carrera -->
+                        <div class="form-group">
+                            <label>Materias</label>
+
+                            <!-- Desarrollo de Software -->
+                            <div id="materias-DS" class="grupo-materias" style="display:none;">
+                                <h4>Desarrollo de Software</h4>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="DS101|Programación I"> Programación I (DS101)
+                                </label><br>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="DS202|Base de Datos"> Base de Datos (DS202)
+                                </label><br>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="DS303|Ingeniería de Software"> Ingeniería de Software (DS303)
+                                </label>
+                            </div>
+
+                            <!-- Redes -->
+                            <div id="materias-RED" class="grupo-materias" style="display:none;">
+                                <h4>Redes</h4>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="RED101|Redes I"> Redes I (RED101)
+                                </label><br>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="RED202|Seguridad Informática"> Seguridad Informática (RED202)
+                                </label>
+                            </div>
+
+                            <!-- Ciberseguridad -->
+                            <div id="materias-CIB" class="grupo-materias" style="display:none;">
+                                <h4>Ciberseguridad</h4>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="CIB101|Criptografía"> Criptografía (CIB101)
+                                </label><br>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="CIB202|Ethical Hacking"> Ethical Hacking (CIB202)
+                                </label><br>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="materias[]" value="CIB303|Análisis Forense Digital"> Análisis Forense Digital (CIB303)
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <span class="glyphicon glyphicon-send"></span> Enviar
+                            </button>
+                            <button type="reset" class="btn btn-default btn-lg">
+                                <span class="glyphicon glyphicon-refresh"></span> Limpiar
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

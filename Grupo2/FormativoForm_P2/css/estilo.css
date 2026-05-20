@@ -1,0 +1,82 @@
+/* estilos.css - Estilos propios del formulario P2 */
+
+/* === BODY === */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* === TITULO === */
+h2 {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* === PANEL === */
+.panel {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(107, 33, 168, 0.2);
+}
+
+.panel-heading {
+    background-color: #6b21a8 !important;
+    color: #ffffff !important;
+    border-radius: 10px 10px 0 0 !important;
+    font-size: 16px;
+}
+
+/* === LABELS === */
+.form-group label {
+    color: #201d20;
+    font-weight: bold;
+}
+
+/* === INPUTS === */
+.form-control {
+    border-color: #a855f7;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    border-color: #6b21a8;
+    box-shadow: 0 0 5px rgba(107, 33, 168, 0.4);
+}
+
+/* === CHECKBOXES Y RADIOS === */
+.checkbox-inline, .radio-inline {
+    color: #6b21a8;
+}
+
+/* === BOTONES === */
+.btn-primary {
+    background-color: #11975d;
+    border-color: #2cb498;
+}
+
+.btn-primary:hover {
+    background-color: #581c87;
+}
+
+.btn-default {
+    color: #213ea8;
+    border-color: #5047d0;
+}
+
+.btn-default:hover {
+    background-color: #f3e8ff;
+}
+
+/* === GRUPO DE MATERIAS === */
+.grupo-materias {
+    border: 1px dashed #a855f7;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #faf5ff;
+}
+
+.grupo-materias h4 {
+    color: #6b21a8;
+    font-weight: bold;
+    margin-top: 5px;
+}
