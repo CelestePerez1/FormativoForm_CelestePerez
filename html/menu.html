@@ -1,3 +1,8 @@
+<?php
+$_doc_root = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), '/');
+$_file_dir = str_replace('\\', '/', dirname(dirname(__FILE__)));
+$_base = rtrim(str_replace($_doc_root, '', $_file_dir), '/');
+?>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand y toggle -->
@@ -8,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/FormativoForm_CelestePerez/control.php">Formativo Formulario</a>
+            <a class="navbar-brand" href="<?= $_base ?>/control.php">Formativo Formulario</a>
         </div>
 
         <!-- Links de navegacion -->
@@ -19,8 +24,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Grupo 2 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/FormativoForm_CelestePerez/Grupo2/FormativoForm_P1/index.php">P1 (GET)</a></li>
-                        <li><a href="Grupo2/FormativoForm_P2/index.php">P2 (POST)</a></li>
+                        <li><a href="<?= $_base ?>/Grupo2/FormativoForm_P1/index.php">P1 (GET)</a></li>
+                        <li><a href="<?= $_base ?>/Grupo2/FormativoForm_P2/index.php">P2 (POST)</a></li>
                     </ul>
                 </li>
 
