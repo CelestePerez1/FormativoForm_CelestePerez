@@ -30,6 +30,12 @@
                 e.preventDefault();
                 return false;
             }
+
+            if ($("input[name='intereses[]']:checked").length === 0) {
+                alert("Debe seleccionar al menos un interés.");
+                e.preventDefault();
+                return false;
+            }
         });
     });
 </script>
