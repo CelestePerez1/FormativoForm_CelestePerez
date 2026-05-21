@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Formulario P1 — Página de entrada con método GET. -->
+<!-- Incluye menú global, formulario de registro y pie de página. -->
+<!-- Carga CSS global y CSS específico del formulario P1. -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

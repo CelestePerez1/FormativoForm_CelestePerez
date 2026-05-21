@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Formulario P2 — Página de entrada con método POST. -->
+<!-- Incluye menú global, formulario de estudiante y pie de página. -->
+<!-- Muestra alerta si procesar.php guardó un error en la sesión. -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +29,7 @@ session_start();
 if (isset($_SESSION["error"])):
 ?>
 <script>
-    alert("<?php echo addslashes($_SESSION['error']); ?>");
+    alert("<?php echo addslashes($_SESSION['error']); ?>");          
 </script>
 <?php
     unset($_SESSION["error"]);

@@ -1,4 +1,6 @@
 <?php
+// Menú de navegación global, incluido en todas las páginas del proyecto.
+// Calcula la ruta base dinámica para que los enlaces funcionen siempre.
 $_doc_root = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), '/');
 $_file_dir = str_replace('\\', '/', dirname(dirname(__FILE__)));
 $_base = rtrim(str_replace($_doc_root, '', $_file_dir), '/');

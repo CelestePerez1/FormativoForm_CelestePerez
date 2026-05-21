@@ -1,5 +1,7 @@
 <?php
-// procesar.php - Valida y procesa la informacion recibida por POST
+// procesar.php — Recibe y valida los datos enviados por POST.
+// Valida contra catálogo interno de carreras y materias válidas.
+// Crea objeto Estudiante y carga salida.php con los datos procesados.
 require_once("ClaseEstudiante.php");
 
 session_start();

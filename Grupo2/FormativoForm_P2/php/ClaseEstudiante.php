@@ -1,5 +1,7 @@
 <?php
-// ClaseEstudiante.php - Clase Estudiante para el formulario P2 (POST)
+// Clase Estudiante — gestiona los datos recibidos del formulario P2 (POST).
+// Almacena: nombre, correo, edad, carrera y materias (array 2D).
+// Métodos: ObtenerDatos() retorna 1D, ObtenerMaterias() retorna 2D.
 
 class Estudiante {
 

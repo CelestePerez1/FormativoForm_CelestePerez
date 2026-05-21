@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Página principal del proyecto Formativo Formularios. -->
+<!-- Ensambla menú, tarjetas y pie de página usando PHP include. -->
+<!-- Carga Bootstrap 3 CDN y el CSS personalizado del proyecto. -->
 <html>
 <head>
 	<meta charset="utf-8">

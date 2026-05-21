@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Vista de salida del Formulario P2, método POST. -->
+<!-- Muestra tabla con datos del estudiante y materias seleccionadas. -->
+<!-- Los datos vienen del objeto Estudiante creado en procesar.php. -->
 <html lang="es">
 <head>
     <meta charset="utf-8">

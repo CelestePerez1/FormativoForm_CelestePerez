@@ -1,6 +1,7 @@
  <?php
-// procesar.php - Valida y procesa los datos recibidos por GET
-// Incluye la clase para gestionar la información
+// procesar.php — Recibe y valida los datos enviados por GET.
+// Sanitiza cada campo y lanza excepciones si hay errores de validación.
+// Crea objeto Persona y carga salida.html con los datos procesados.
 require_once("clase.php");
 
 // Verificar que llegaron datos por GET

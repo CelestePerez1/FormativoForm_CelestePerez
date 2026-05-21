@@ -1,5 +1,7 @@
 <?php
-// Clase.php - Clase Persona para gestionar la información del formulario P1
+// Clase Persona — gestiona los datos recibidos del formulario P1 (GET).
+// Almacena: nombre, sexo, nacionalidad, intereses y descripción personal.
+// Métodos: getters individuales, ObtenerDatos() y ObtenerIntereses().
 
 class Persona {
 
