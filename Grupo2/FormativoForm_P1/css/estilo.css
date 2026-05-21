@@ -80,7 +80,7 @@ h2 {
 .form-control {
     border: 1.5px solid var(--p1-border);
     border-radius: 9px !important;
-    padding: 10px 14px;
+    padding: 5px 14px;
     font-size: 14px;
     color: #1e1b4b;
     transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
