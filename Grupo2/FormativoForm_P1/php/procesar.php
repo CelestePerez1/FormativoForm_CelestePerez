@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && !empty($_GET)) {
             throw new Exception("Debe seleccionar una nacionalidad.");
         }
 
-        // Intereses (checkbox - puede ser vacío)
+        // Intereses (checkbox)
         $intereses = isset($_GET["intereses"]) ? $_GET["intereses"] : [];
         // Sanitizar cada interés
         $intereses = array_map("htmlspecialchars", $intereses);
