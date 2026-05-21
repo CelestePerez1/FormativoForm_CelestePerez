@@ -1,82 +1,274 @@
-/* estilos.css - Estilos propios del formulario P2 */
+/* estilo.css - Formulario P2 (POST) — versión mejorada */
 
-/* === BODY === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* === VARIABLES LOCALES === */
+:root {
+    --p2-accent:  #6b21a8;
+    --p2-light:   #a855f7;
+    --p2-soft:    #faf5ff;
+    --p2-border:  #e9d5ff;
+    --blue:       #2563eb;
+    --blue-light: #3b82f6;
+    --transition: 0.25s cubic-bezier(.4,0,.2,1);
+    --radius:     14px;
+}
+
 body {
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
+    background: #faf7ff;
+    font-family: 'Inter', Arial, sans-serif;
+    animation: fadeUp .4s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* === TITULO === */
 h2 {
-    color: #000000;
-    font-weight: bold;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--p2-accent), var(--p2-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -.3px;
 }
 
 /* === PANEL === */
 .panel {
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(107, 33, 168, 0.2);
+    border: 1px solid var(--p2-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px rgba(107,33,168,.13);
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow var(--transition), transform var(--transition);
+    animation: slideIn .35s ease both;
 }
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel:hover {
+    box-shadow: 0 8px 36px rgba(107,33,168,.22);
+    transform: translateY(-2px);
+}
+
+/* Delay escalonado para múltiples paneles */
+.panel:nth-child(1) { animation-delay: .05s; }
+.panel:nth-child(2) { animation-delay: .12s; }
+.panel:nth-child(3) { animation-delay: .19s; }
 
 .panel-heading {
-    background-color: #6b21a8 !important;
-    color: #ffffff !important;
-    border-radius: 10px 10px 0 0 !important;
-    font-size: 16px;
+    background: linear-gradient(90deg, var(--p2-accent) 0%, var(--p2-light) 100%) !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 20px;
+    border-radius: 0 !important;
+    letter-spacing: .2px;
 }
 
-/* === LABELS === */
+/* === FORM LABELS === */
 .form-group label {
-    color: #201d20;
-    font-weight: bold;
+    color: #3b0764;
+    font-weight: 600;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    transition: color var(--transition);
 }
+.form-group:focus-within label { color: var(--p2-accent); }
 
 /* === INPUTS === */
 .form-control {
-    border-color: #a855f7;
-    border-radius: 6px;
+    border: 1.5px solid var(--p2-border);
+    border-radius: 9px !important;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #1e1b4b;
+    transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    background: #fdfdff;
 }
-
 .form-control:focus {
-    border-color: #6b21a8;
-    box-shadow: 0 0 5px rgba(107, 33, 168, 0.4);
+    border-color: var(--p2-accent) !important;
+    box-shadow: 0 0 0 3px rgba(107,33,168,.15) !important;
+    background: #fff;
+    outline: none;
+}
+.form-control::placeholder { color: #b8a7d1; }
+
+/* === SELECT con ícono personalizado === */
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b21a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
 }
 
-/* === CHECKBOXES Y RADIOS === */
-.checkbox-inline, .radio-inline {
-    color: #6b21a8;
-}
-
-/* === BOTONES === */
-.btn-primary {
-    background-color: #11975d;
-    border-color: #2cb498;
-}
-
-.btn-primary:hover {
-    background-color: #581c87;
-}
-
-.btn-default {
-    color: #213ea8;
-    border-color: #5047d0;
-}
-
-.btn-default:hover {
-    background-color: #f3e8ff;
-}
-
-/* === GRUPO DE MATERIAS === */
-.grupo-materias {
-    border: 1px dashed #a855f7;
+/* === CHECKBOXES === */
+.checkbox-inline {
+    color: var(--p2-accent);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 10px;
     border-radius: 8px;
-    padding: 10px 15px;
+    transition: background var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+.checkbox-inline:hover { background: var(--p2-soft); }
+
+input[type="checkbox"] {
+    accent-color: var(--p2-accent);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* === GRUPO MATERIAS === */
+.grupo-materias {
+    border: 1.5px dashed var(--p2-light);
+    border-radius: 12px;
+    padding: 16px 18px;
     margin-top: 10px;
-    background-color: #faf5ff;
+    background: var(--p2-soft);
+    animation: revealMaterias .3s cubic-bezier(.4,0,.2,1) both;
+    position: relative;
+    overflow: hidden;
+}
+
+.grupo-materias::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--p2-accent), var(--p2-light));
+    border-radius: 3px 3px 0 0;
+}
+
+@keyframes revealMaterias {
+    from { opacity: 0; transform: scaleY(.94); transform-origin: top; }
+    to   { opacity: 1; transform: scaleY(1); }
 }
 
 .grupo-materias h4 {
-    color: #6b21a8;
-    font-weight: bold;
-    margin-top: 5px;
+    color: var(--p2-accent);
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+/* === BOTONES === */
+.btn {
+    border-radius: 10px !important;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 10px 28px;
+    transition: transform var(--transition), box-shadow var(--transition) !important;
+    position: relative;
+    overflow: hidden;
+}
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: scale(.97); }
+
+/* Ripple */
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,.20);
+    opacity: 0;
+    transition: opacity .15s;
+}
+.btn:active::after { opacity: 1; }
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--blue), var(--blue-light)) !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: 0 4px 14px rgba(37,99,235,.30);
+}
+.btn-primary:hover {
+    box-shadow: 0 6px 22px rgba(37,99,235,.42) !important;
+}
+
+.btn-default {
+    border: 2px solid var(--p2-border) !important;
+    color: var(--p2-accent) !important;
+    background: transparent !important;
+}
+.btn-default:hover {
+    background: var(--p2-soft) !important;
+    border-color: var(--p2-light) !important;
+}
+
+/* === ALERT === */
+.alert-success {
+    background: linear-gradient(90deg, #f0fdf4, #dcfce7);
+    border: 1.5px solid #86efac;
+    border-radius: 10px;
+    color: #15803d;
+    font-weight: 600;
+    animation: popIn .4s cubic-bezier(.175,.885,.32,1.275) both;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* === TABLA === */
+.table-bordered thead tr th {
+    background: linear-gradient(90deg, var(--p2-accent), var(--p2-light));
+    color: #fff;
+    font-weight: 600;
+    border: none !important;
+    padding: 11px 16px;
+}
+.table-bordered {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table-striped > tbody > tr:nth-of-type(odd) { background: var(--p2-soft); }
+.table tbody tr {
+    transition: background var(--transition);
+}
+.table tbody tr:hover { background: #f0e6ff !important; }
+
+/* Stagger rows */
+.table tbody tr:nth-child(1) { animation: rowIn .25s .06s ease both; }
+.table tbody tr:nth-child(2) { animation: rowIn .25s .12s ease both; }
+.table tbody tr:nth-child(3) { animation: rowIn .25s .18s ease both; }
+.table tbody tr:nth-child(4) { animation: rowIn .25s .24s ease both; }
+.table tbody tr:nth-child(5) { animation: rowIn .25s .30s ease both; }
+
+@keyframes rowIn {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* === LABEL CÓDIGO === */
+.label-primary {
+    background: linear-gradient(135deg, var(--p2-accent), var(--p2-light));
+    border-radius: 6px !important;
+    font-size: 12.5px !important;
+    padding: 4px 10px !important;
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+/* === TABLA MATERIAS (hover) === */
+.table-hover tbody tr:hover td { background: #ede9fe; }
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
 }
