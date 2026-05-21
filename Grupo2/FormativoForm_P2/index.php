@@ -88,8 +88,16 @@ endif;
             }
         });
 
-        // Validacion extra al enviar: al menos una materia
+        // Validacion extra al enviar: nombre sin espacios solos y al menos una materia
         $("#formulario").submit(function(e) {
+            var campoNombre = $("input[name='nombre']");
+            if (campoNombre.val().trim() === "") {
+                alert("El nombre del estudiante no puede estar vacío o contener solo espacios.");
+                campoNombre.val("").focus();
+                e.preventDefault();
+                return false;
+            }
+
             var carrera = $("#carrera").val();
             if (carrera === "") {
                 alert("Debe seleccionar una carrera.");
