@@ -19,7 +19,17 @@ function validar_nombre($nombre) {
 }
 
 function validar_correo($correo) {
-    return filter_var($correo, FILTER_VALIDATE_EMAIL) !== false;
+    // Paso 1: estructura basica de email (usuario@dominio)
+    if (filter_var($correo, FILTER_VALIDATE_EMAIL) === false) {
+        return false;
+    }
+    // Paso 2: exige al menos un punto en el dominio → algo@algo.dominio
+    // ^[^\s@]+   → parte local (cualquier cosa menos espacio y @)
+    // @          → arroba
+    // [^\s@]+    → nombre del dominio (cualquier cosa menos espacio y @)
+    // \.         → punto literal obligatorio
+    // [^\s@]{2,} → TLD de al menos 2 caracteres (com, ar, net, org...)
+    return (bool) preg_match('/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/', $correo);
 }
 
 function validar_edad($edad) {

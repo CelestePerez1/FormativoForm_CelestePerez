@@ -98,6 +98,16 @@ endif;
                 return false;
             }
 
+            var campoCorreo = $("input[name='correo']");
+            var correo = campoCorreo.val().trim();
+            // Exige formato algo@algo.dominio (mínimo 2 chars en el TLD)
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo)) {
+                alert("El correo debe tener el formato algo@algo.dominio (ej: juan@gmail.com).");
+                campoCorreo.focus();
+                e.preventDefault();
+                return false;
+            }
+
             var carrera = $("#carrera").val();
             if (carrera === "") {
                 alert("Debe seleccionar una carrera.");
